@@ -1,4 +1,6 @@
 const styles = {
+  // sm 表示small条件以上，设置padding横向为16个单位
+  // px 表示无条件的横向6个单位 
     paddingX: "sm:px-16 px-6",
     paddingY: "sm:py-16 py-6",
     padding: "sm:px-16 px-6 sm:py-16 py-10",
