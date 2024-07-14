@@ -1,25 +1,25 @@
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component"
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 import 'react-vertical-timeline-component/style.min.css'
 import { styles } from "../style";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils/motion"; 
+import { textVariant } from "../utils/motion";
 
-const ExperienceCard = ({experience})=> (
+const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
-    contentStyle={{background: '#1d1836', color: '#fff'}}
-    contentArrowStyle={{borderRighht:'7px solid #232631'}}
+    contentStyle={{ background: '#1d1836', color: '#fff' }}
+    contentArrowStyle={{ borderRighht: '7px solid #232631' }}
     date={experience.date}
-    iconStyle={{background: experience.iconBg}}
+    iconStyle={{ background: experience.iconBg }}
     icon={
       <div>
-        <img 
+        <img
           alt={experience.company_name}
           src={experience.icon}
-          className="w-[60%] h-[60%] object-contain"
-         />
+          className="w-[100%] h-[60%] object-contain"
+        />
       </div>
     }
   >
@@ -45,7 +45,7 @@ const Experience = () => {
       <div className="flex flex-col mt-20">
         <VerticalTimeline>
           {experiences.map((experience, index) => (
-            <ExperienceCard key={index} experience={experience} />
+            <ExperienceCard key={`experience-${index}`} experience={experience} />
           ))}
         </VerticalTimeline>
       </div>
